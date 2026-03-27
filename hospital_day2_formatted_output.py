@@ -1,0 +1,55 @@
+# Hospital System - Day 2
+# Improved patient display with formatting and numbering
+# Author: Ezekiel Kang'ombe
+
+patients = []
+
+
+def add_patient():
+    name = input("Enter patient name: ")
+    age = int(input("Enter age: "))
+    gender = input("Enter gender: ")
+    condition = input("Enter condition: ")
+
+    patient = {
+        "name": name,
+        "age": age,
+        "gender": gender,
+        "condition": condition
+    }
+
+    patients.append(patient)
+    print("Patient added successfully.")
+
+
+def view_patients():
+    if len(patients) == 0:
+        print("No patients found.")
+    else:
+        print("\n--- Patient List ---")
+        
+        for index, patient in enumerate(patients, start=1):
+            print(f"\nPatient {index}:")
+            print("Name:", patient["name"])
+            print("Age:", patient["age"])
+            print("Gender:", patient["gender"])
+            print("Condition:", patient["condition"])
+
+
+while True:
+    print("\n--- Hospital System ---")
+    print("1. Add Patient")
+    print("2. View Patients")
+    print("3. Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        add_patient()
+    elif choice == "2":
+        view_patients()
+    elif choice == "3":
+        print("Exiting system...")
+        break
+    else:
+        print("Invalid choice")
