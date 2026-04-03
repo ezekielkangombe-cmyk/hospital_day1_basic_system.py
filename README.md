@@ -1,70 +1,97 @@
-# 🏥 Hospital Information System (Python)
+# Hospital System - Day 4
 
-## 📌 Project Overview
-This is a simple hospital information system built using Python.  
-The project is being developed step by step to practice programming fundamentals such as functions, loops, lists, and system design.
+patients = []
 
----
 
-## 🚀 Progress
+def add_patient():
+    name = input("Enter patient name: ")
+    age = int(input("Enter age: "))
+    gender = input("Enter gender: ")
+    condition = input("Enter condition: ")
 
-### ✅ Day 1 – Basic System Structure
-- Created the main program structure
-- Implemented a menu system using a loop
-- Added functionality to:
-  - Add a patient
-  - View all patients
-- Used a list to store patient records
-- Used dictionaries to represent each patient
+    patient = {
+        "name": name,
+        "age": age,
+        "gender": gender,
+        "condition": condition
+    }
 
----
+    patients.append(patient)
+    print("Patient added successfully.")
 
-### ✅ Day 2 – Improved Output Formatting
-- Improved how patient data is displayed
-- Added numbering for each patient
-- Made output more readable and user-friendly
 
----
+def view_patients():
+    if len(patients) == 0:
+        print("No patients found.")
+    else:
+        print("\n--- Patient List ---")
+        
+        for index, patient in enumerate(patients, start=1):
+            print(f"\nPatient {index}:")
+            print("Name:", patient["name"])
+            print("Age:", patient["age"])
+            print("Gender:", patient["gender"])
+            print("Condition:", patient["condition"])
 
-### ✅ Day 3 – Search Patient Feature
-- Added functionality to search for a patient by name
-- Implemented case-insensitive search using `.lower()`
-- Displays patient details if found
-- Shows "Patient not found" if no match exists
-- Tested system with different inputs
 
----
+def search_patient():
+    search_name = input("Enter patient name to search: ")
 
-## 🧠 Concepts Learned
-- Lists and dictionaries
-- Functions
-- Loops (for and while)
-- Conditional statements (if, elif, else)
-- User input handling
-- Basic system design
+    found = False
 
----
+    for patient in patients:
+        if patient["name"].lower() == search_name.lower():
+            print("\nPatient Found:")
+            print("Name:", patient["name"])
+            print("Age:", patient["age"])
+            print("Gender:", patient["gender"])
+            print("Condition:", patient["condition"])
+            found = True
 
-## 📂 Project Structure
-- `hospital_day1_basic_system.py`
-- `hospital_day2_formatted_output.py`
-- `hospital_day3_search_patient.py`
+    if not found:
+        print("Patient not found.")
 
----
 
-## ⚠️ Current Limitations
-- Data is not saved permanently (resets after program ends)
-- No input validation
-- Search requires exact spelling
+def delete_patient():
+    if len(patients) == 0:
+        print("No patients to delete.")
+        return
 
----
+    view_patients()
 
-## 🔜 Next Steps
-- Add delete patient functionality
-- Improve input validation
-- Enhance system usability
+    try:
+        choice = int(input("Enter patient number to delete: "))
 
----
+        if 1 <= choice <= len(patients):
+            removed = patients.pop(choice - 1)
+            print(f"Patient '{removed['name']}' deleted successfully.")
+        else:
+            print("Invalid number.")
 
-## 👨‍💻 Author
-Ezekiel Kang'ombe
+    except ValueError:
+        print("Please enter a valid number.")
+
+
+while True:
+    print("\n--- Hospital System ---")
+    print("1. Add Patient")
+    print("2. View Patients")
+    print("3. Search Patient")
+    print("4. Delete Patient")
+    print("5. Exit")
+
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        add_patient()
+    elif choice == "2":
+        view_patients()
+    elif choice == "3":
+        search_patient()
+    elif choice == "4":
+        delete_patient()
+    elif choice == "5":
+        print("Exiting system...")
+        break
+    else:
+        print("Invalid choice")
