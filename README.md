@@ -37,4 +37,4 @@ The project is being developed step by step to practice programming fundamentals
 
 ### ✅ Day 4 – Delete Patient Feature
 - Added functionality to delete a patient
-- Patients are selected using their assigned number
+- Patients are selected using their assigned number. 
