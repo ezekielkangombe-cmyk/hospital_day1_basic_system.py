@@ -38,3 +38,9 @@ The project is being developed step by step to practice programming fundamentals
 ### ✅ Day 4 – Delete Patient Feature
 - Added functionality to delete a patient
 - Patients are selected using their assigned number. 
+### ✅ Day 5 – Input Validation
+- Added validation for patient name (cannot be empty)
+- Ensured age is a positive number
+- Restricted gender input to "male" or "female"
+- Prevented invalid inputs using loops and try/except
+- Improved system reliability and data quality
