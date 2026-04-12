@@ -44,3 +44,9 @@ The project is being developed step by step to practice programming fundamentals
 - Restricted gender input to "male" or "female"
 - Prevented invalid inputs using loops and try/except
 - Improved system reliability and data quality
+### ✅ Day 6 – Update Patient Feature
+- Added functionality to update patient details
+- Users can modify name, age, gender, and condition
+- Allowed skipping fields to keep existing values
+- Maintained input validation during updates
+- Improved system flexibility and control
