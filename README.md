@@ -50,3 +50,9 @@ The project is being developed step by step to practice programming fundamentals
 - Allowed skipping fields to keep existing values
 - Maintained input validation during updates
 - Improved system flexibility and control
+### ✅ Day 7 – Data Persistence
+- Implemented file storage using JSON
+- Patient data is saved after every operation (add, delete, update)
+- Data is automatically loaded when the system starts
+- Ensured patient records are not lost after exiting the program
+- Improved system reliability and real-world usability
