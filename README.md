@@ -56,3 +56,8 @@ The project is being developed step by step to practice programming fundamentals
 - Data is automatically loaded when the system starts
 - Ensured patient records are not lost after exiting the program
 - Improved system reliability and real-world usability
+### ✅ Day 8 – System Improvements
+- Added confirmation before deleting a patient
+- Prevented accidental data loss
+- Improved user feedback messages
+- Enhanced overall system usability and safety
